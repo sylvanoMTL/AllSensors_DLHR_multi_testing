@@ -48,7 +48,7 @@ void loop(){
     #else
       for(byte i = 0;i<8;i++){
         tca9548a.selectChannel(i);
-        condition[i] = gagePressureArray[i].readDataAsynchro();
+        condition[i] = gagePressureArray[i].readDataAsynchro(AllSensors_DLHR::MeasurementType::AVERAGE16);
         if(condition[i]){
             pressureArray[i] = gagePressureArray[i].pressure;
         }
